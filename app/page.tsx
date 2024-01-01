@@ -1,7 +1,17 @@
-export const metadata = {
-  title: 'App Router',
-}
+import './page.css'
+import {ThemeProvider} from "@/providers";
+import {TopNav} from "@/components/presentational/Layout";
+import {Listings} from "@/components/presentational";
 
-export default function Page() {
-  return <h1>App Router</h1>
+export default function Home() {
+  return (
+    <ThemeProvider>
+      <div className="container">
+        <TopNav />
+        <main className="main">
+          <Listings/>
+        </main>
+      </div>
+    </ThemeProvider>
+  )
 }
