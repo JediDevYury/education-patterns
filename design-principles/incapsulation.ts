@@ -5,6 +5,8 @@ interface IOrder {
     price: number
   }[];
   country: string
+
+  getOrderTotal(): number
 }
 
 interface ITaxCalculator {
@@ -38,7 +40,7 @@ class Order implements IOrder {
   country = "US"
   taxCalculator = new TaxCalculator();
 
-  getOrderTotal(order: ITaxCalculator) {
+  getOrderTotal() {
     let total = 0;
 
     for (const lineItem of this.lineItems) {
