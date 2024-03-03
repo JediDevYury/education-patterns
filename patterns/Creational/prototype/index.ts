@@ -3,9 +3,9 @@ interface Prototype {
 }
 
 class Ad implements Prototype {
-  duration: number;
-  ageRestriction: number;
-  isWatched: boolean;
+  duration!: number;
+  ageRestriction!: number;
+  isWatched!: boolean;
   play() {}
   refresh() {}
   sendAnalytic() {}

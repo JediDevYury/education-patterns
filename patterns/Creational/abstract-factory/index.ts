@@ -2,7 +2,7 @@ export interface Film {
   title: string;
   duration: number;
 }
-export interface TvSeries {
+export interface TvMiniSeries {
   title: string;
   episodeCount: number;
 }
@@ -13,7 +13,7 @@ export interface TvShow {
 
 interface MovieFactory {
   createFilm(): Film;
-  createTvSeries(): TvSeries;
+  createTvMiniSeries(): TvMiniSeries;
   createTvShow(): TvShow;
 }
 
@@ -21,28 +21,28 @@ const horrorFactory: MovieFactory = {
   createFilm() {
     return { title: "", duration: 124 };
   },
-  createTvSeries() {
-    return { title: "", episodeCount: 124 };
+  createTvMiniSeries() {
+    return { title: "", episodeCount: 10 };
   },
   createTvShow() {
-    return { title: "", seasonCount: 124 };
+    return { title: "", seasonCount: 5 };
   },
 };
 const comedyFactory: MovieFactory = {
   createFilm() {
     return { title: "", duration: 124 };
   },
-  createTvSeries() {
-    return { title: "", episodeCount: 124 };
+  createTvMiniSeries() {
+    return { title: "", episodeCount: 12 };
   },
   createTvShow() {
-    return { title: "", seasonCount: 124 };
+    return { title: "", seasonCount: 6 };
   },
 };
 
 function createMovieSeason(movieFactory: MovieFactory) {
   movieFactory.createFilm();
-  movieFactory.createTvSeries();
+  movieFactory.createTvMiniSeries();
   movieFactory.createTvShow();
 }
 
