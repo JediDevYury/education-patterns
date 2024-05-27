@@ -2,7 +2,7 @@ import {observers} from './observers'
 
 type CustomObserver = (...args: any[]) => any
 
-const Observable= Object.freeze({
+const Observable = Object.freeze({
   notify: <T>(data: T) => {
     return observers.forEach(observer => observer(data))
   },
